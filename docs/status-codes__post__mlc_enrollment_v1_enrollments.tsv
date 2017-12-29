@@ -1,0 +1,27 @@
+STATUS	CODE	DESCRIPTION
+200	CHDES101	De-enrollment successful
+200	CHERRD101	primaryAccountNumber does not fall within account range specified by issuer as eligible for enrollment in the service
+200	CHERRD102	clientMessageID is not unique
+200	CHERRD103	Enrollment request failed because primaryAccountNumber and deviceId are already enrolled together
+200	CHERRD104	De-enrollment request failed because primaryAccountNumber and deviceId combination does not exist or deviceId exists but primaryAccountNumber does not
+200	CHERRD105	De-enrollment failed because deviceId does not exist
+200	CHERRD107	enrollmentMessageType is invalid. Allowed values are 'enroll' and 'deenroll'
+200	CHERRD108	clientMessageID cannot be more than 29 characters
+200	CHERRD109	clientMessageID is required and cannot be null or empty
+200	CHERRD110	primaryAccountNumber must be 16 or 19 characters
+200	CHERRD111	primaryAccountNumber must be numeric characters only
+200	CHERRD112	primaryAccountNumber is required and cannot be null or empty
+200	CHERRD113	deviceId is required and cannot be null or empty
+200	CHERRD114	deviceId cannot be more than 50 characters
+200	CHERRD115	deviceId cannot contains special characters (except hyphen)
+200	CHERRD116	issuerId is required (cannot be missing, null, empty) and must be a valid Issuer ID for the client username
+200	CHERRD117	issuerId does not allow non-numeric or special characters
+200	CHERRD118	issuerId cannot be more than 38 numeric characters
+200	CHERRD122	The maximum of 4 deviceIds are already enrolled for primaryAccountNumber
+200	CHERRD123	Enrollment or Deenrollment failed. Please try again.
+200	CHERRD124	No account ranges are eligible for enrollment in the service
+200	CHERRD127	enrollmentMessageType is required and cannot be null or empty
+200	CHES101	Enrollment successful
+200	DBE200	System Exception. Please try again.
+404	-	Resource not found
+500	-	An internal error occured, please try again later

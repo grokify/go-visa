@@ -1,0 +1,36 @@
+STATUS	CODE	DESCRIPTION
+200	CDI000	Success
+200	CDI001	Internal service failure
+200	CDI071	Request Data Invalid
+200	CDI011	Requesting Client IP is invalid
+200	CDI012	Request Header Data Length is invalid
+200	CDI013	Request Data String Elements Length is invalid
+200	CDI041	Entry Group Info Lookup Failure
+200	CDI082	Merchant Repository execution failure
+200	CDI083	Invalid VMID and/or VSID
+200	CDI085	Merchant Country Code Invalid
+200	CDI086	Merchant Url Invalid
+200	CDI087	Atleast one of them (VisaMerchantId,VisaStoreId,MerchantName,BusinessRegistrationId,MerchantUrl,AcquirerCardAcceptorId,AcquirerMid & AcquirerBid) must be available
+200	CDI090	Merchant Country Code is missing
+200	CDI091	Proximity Can Be Applied Only For VisaMerchantName
+200	CDI092	No matching records found
+200	CDI093	WildCard Can Be Applied Only for VisaMerchantName
+200	CDI094	Invalid Request. Group Name is Required
+200	CDI096	No Groups are configured for the requested Business Application ID
+200	CDI097	Request Message ID value is null/empty
+200	CDI098	Message Date Time required in UTC 2008-09-19T00:00:00.000 format
+200	CDI099	Message Date Time value is null/empty
+200	CDI110	Max records Invalid
+200	CDI118	Acquirer Card Acceptor ID is Invalid
+200	CDI119	Acquiring BIN is missing
+200	CDI120	Internal Application Error
+200	CDI124	Max records cannot be less than 1
+200	CDI126	Minimum 3 characters from Visa Merchant Name are required for wildcard search
+200	CDI127	Merchant Phone Number Invalid
+200	CDI128	Invalid Country Code. Country Code can only be 840
+200	CDIXTF	Extreme Failure (System Unavailable)
+200	CDI000MAXRCW	Max Record Limit is 50. Please use start index to see the next set of records
+200	CDI128	Invalid Country Code. Country Code can only be 840
+200	CDI131	Entitlment is not enabled for the requested Service
+200	CDI133	Invalid Request. Both Acquirer Bid and Acquirer Mid are required
+200	CDI136	AcquirerBid is invalid

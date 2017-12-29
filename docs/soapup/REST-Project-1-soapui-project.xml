@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="1ef7b577-806c-4473-9380-e581097100ad" activeEnvironment="Default" name="REST Project 1" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="48ed2412-d745-4e33-8133-2b836f046cd2" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://sandbox.api.visa.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://sandbox.api.visa.com</con:endpoint></con:endpoints><con:resource name="Helloworld" path="/vdp/helloworld" id="96ef5af5-05a9-4487-abb5-62c48371c433"><con:settings/><con:parameters/><con:method name="Helloworld 1" id="2d9e52c3-4306-420e-889c-650b572c09f0" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:hel="https://sandbox.api.visa.com/vdp/helloworld">hel:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:hel="https://sandbox.api.visa.com/vdp/helloworld">hel:Response</con:element></con:representation><con:request name="Request 1" id="deda0c64-0291-4efe-b860-709d5e178866" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://sandbox.api.visa.com</con:endpoint><con:request/><con:originalUri>https://sandbox.api.visa.com/vdp/helloworld</con:originalUri><con:credentials><con:username>VHSEIORPBTPRY5ZS98CT21lfXMcC59BXk3NXzdrWJfUUIJP8o</con:username><con:password>I4yLAWA4B1p3UHv0RxRvpf87</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="search" path="/merchantsearch/v1/search" id="b7ef91de-d70e-4b34-b596-e1dac37781e6"><con:settings/><con:parameters/><con:method name="Method 1" id="570b1a60-f46d-4156-aba9-d2bbc03bf8ac" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:sear="https://sandbox.api.visa.com/merchantsearch/v1/search">sear:Response</con:element></con:representation><con:request name="Request 1" id="e13c3ad4-d1f9-4663-812f-c047a3ce0f2f" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://sandbox.api.visa.com</con:endpoint><con:request>{
+"searchAttrList": {
+"merchantName": "Amazon",
+"merchantCountryCode": "840"
+},
+"responseAttrList": [
+"GNSTANDARD"
+],
+"searchOptions": {
+"wildCard": [
+"merchantName"
+],
+"maxRecords": "5",
+"matchIndicators": "true",
+"matchScore": "true",
+"proximity": [
+"merchantName"
+]
+},
+"header": {
+"requestMessageId": "Request_001",
+"startIndex": "0",
+"messageDateTime": "2017-11-04T17:40:50.903"
+}
+}</con:request><con:originalUri>https://sandbox.api.visa.com/merchantsearch/v1/search</con:originalUri><con:credentials><con:username>VHSEIORPBTPRY5ZS98CT21lfXMcC59BXk3NXzdrWJfUUIJP8o</con:username><con:password>I4yLAWA4B1p3UHv0RxRvpf87</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

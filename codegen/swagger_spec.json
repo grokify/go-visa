@@ -1,0 +1,561 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a quick Swagger Spec for the Visa API",
+    "version": "1.0.0",
+    "title": "Visa API",
+    "termsOfService": "https://developer.visa.com/terms"
+  },
+  "host": "sandbox.api.visa.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "merchantsearch",
+      "description": "Merchant Search",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://developer.visa.com/capabilities/merchant_search/reference"
+      }
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {
+    "basicAuth": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
+  "paths": {
+    "/merchantsearch/v1/search": {
+      "post": {
+        "tags": [
+          "merchantsearch"
+        ],
+        "summary": "Add a new pet to the store",
+        "description": "",
+        "operationId": "searchMerchant",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Pet object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "searchAttrList": {
+                  "type": "object",
+                  "properties": {
+                    "merchantName": {
+                      "type": "string",
+                      "description": "Name of the Merchant or Supplier. Note: Optional when any one of VisaMerchantId or VisaStoreId or BusinessRegistrationId or MerchantUrl or AcquirerCardAcceptorId is provided."
+                    },
+                    "visaMerchantId": {
+                      "type": "string",
+                      "description": "Double, max: 8 characters. Unique identifier for Merchant provided by VISA. Note: Optional when any one of MerchantName or VisaStoreId or BusinessRegistrationId or MerchantUrl or AcquirerCardAcceptorId is provided."
+                    },
+                    "visaStoreId": {
+                      "type": "string",
+                      "description": "Double, max: 9 characters. Unique identifier for a Branch/Outlet. Note: Optional when any one of MerchantName or VisaMerchantId or BusinessRegistrationId or MerchantUrl or AcquirerCardAcceptorId is provided."
+                    },
+                    "businessRegistrationId": {
+                      "type": "string",
+                      "description": "Merchants Business Registration ID/Tax ID.Note: Optional when any one of MerchantName or VisaMerchantId or VisaStoreId or MerchantUrl or AcquirerCardAcceptorId is provided."
+                    },
+                    "merchantStreetAddress": {
+                      "type": "string",
+                      "description": "Address of the registered Merchant"
+                    },
+                    "merchantCity": {
+                      "type": "string",
+                      "description": "City of the registered Merchant"
+                    },
+                    "merchantState": {
+                      "type": "string",
+                      "description": "Alpha, max: 2 characters. State of the registered Merchant. Ex: US"
+                    },
+                    "merchantPostalCode": {
+                      "type": "string",
+                      "description": "Postal Code of the registered Merchant"
+                    }
+                  }
+                },
+                "responseAttrList": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "searchOptions": {
+                  "type": "object",
+                  "properties": {
+                    "wildCard": {
+                      "type": "array",
+                      "description": "* and ?/Wildcard Tag. Allows user to search on Merchant Name using wildcards",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "maxRecords": {
+                      "type": "string",
+                      "description": "Allows user to define maximum number of records to be sent in the response. If the User doesn’t set the maxRecords the value will be set by default to 25. Note: Response records will be unique and sent in order of highest to lowest Match Score"
+                    },
+                    "matchIndicators": {
+                      "type": "boolean",
+                      "description": "Allows user to define if they would like to see which request attributes found a matching record"
+                    },
+                    "matchScore": {
+                      "type": "boolean",
+                      "description": "Allows user to define if they would like to see the matchScore and receive the response in order of MatchScore"
+                    },
+                    "proximity": {
+                      "type": "array",
+                      "description": "Proximity tag. Allows user to do a proximity search on Merchant Name (upto 1 spaces). Note: Proximity Search cannot be combined with Wildcard. If wildcards are used proximity will be ignored.",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "header": {
+                  "type": "object",
+                  "properties": {
+                    "requestMessageId": {
+                      "type": "string",
+                      "description": "max: 50 characters. A string which uniquely identifies the service request. Requesting application need to create this unique message Id"
+                    },
+                    "startIndex": {
+                      "type": "string",
+                      "description": "Optional. Integer Default='0'. Records displayed start at the defined number (Defaulted to 0 if not provided in request)"
+                    },
+                    "messageDateTime": {
+                      "type": "string",
+                      "description": "YYYY-MM-DDThh:mm:ss.sss, max: 23 characters. Date and time at which Request is sent (up to milliseconds in UTC). Ex: 2008-09-19T00:00:00.000"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "merchantSearchServiceResponse": {
+                  "type": "object",
+                  "properties": {
+                    "merchantSearchResponseHeader": {
+                      "type": "object",
+                      "properties": {
+                        "requestMessageId": {
+                          "type": "string",
+                          "description": "A string uniquely identifies the service request. Response will contain same Message Id as received from requesting application"
+                        },
+                        "messageDateTime": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "Date and time at which Response is sent (up to milliseconds in UTC). Ex: 2008-09-19T00:00:00.000"
+                        },
+                        "responseMessageId": {
+                          "type": "string",
+                          "description": "A combination of Service Id, Application Id, an Integer and current Timestamp that uniquely identifies the current request-response processing"
+                        },
+                        "startIndex": {
+                          "type": "string",
+                          "description": "Record Start Index"
+                        },
+                        "endIndex": {
+                          "type": "string",
+                          "description": "Record End Index"
+                        },
+                        "numRecordsMatched": {
+                          "type": "integer",
+                          "description": "Number of records matched"
+                        },
+                        "numRecordsReturned": {
+                          "type": "integer",
+                          "description": "Number of records returned. Note: Matched records may differ from returned records if Max Records is defined or system limit is exceeded"
+                        }
+                      }
+                    },
+                    "merchantSearchResponseStatus": {
+                      "type": "object",
+                      "properties": {
+                        "statusCode": {
+                          "type": "string",
+                          "description": "List of attributes that found a match or did not find a match"
+                        },
+                        "statusDescription": {
+                          "type": "string",
+                          "description": "A description of the StatusCode. A brief description indicating the result of the Service Request"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "MerchantSearchRequest": {
+      "type": "object",
+      "properties": {
+        "searchAttrList": {
+          "type": "object",
+          "properties": {
+            "merchantName": {
+              "type": "string",
+              "description": "Name of the Merchant or Supplier. Note: Optional when any one of VisaMerchantId or VisaStoreId or BusinessRegistrationId or MerchantUrl or AcquirerCardAcceptorId is provided."
+            },
+            "visaMerchantId": {
+              "type": "string",
+              "description": "Double, max: 8 characters. Unique identifier for Merchant provided by VISA. Note: Optional when any one of MerchantName or VisaStoreId or BusinessRegistrationId or MerchantUrl or AcquirerCardAcceptorId is provided."
+            },
+            "visaStoreId": {
+              "type": "string",
+              "description": "Double, max: 9 characters. Unique identifier for a Branch/Outlet. Note: Optional when any one of MerchantName or VisaMerchantId or BusinessRegistrationId or MerchantUrl or AcquirerCardAcceptorId is provided."
+            },
+            "businessRegistrationId": {
+              "type": "string",
+              "description": "Merchants Business Registration ID/Tax ID.Note: Optional when any one of MerchantName or VisaMerchantId or VisaStoreId or MerchantUrl or AcquirerCardAcceptorId is provided."
+            },
+            "merchantStreetAddress": {
+              "type": "string",
+              "description": "Address of the registered Merchant"
+            },
+            "merchantCity": {
+              "type": "string",
+              "description": "City of the registered Merchant"
+            },
+            "merchantState": {
+              "type": "string",
+              "description": "Alpha, max: 2 characters. State of the registered Merchant. Ex: US"
+            },
+            "merchantPostalCode": {
+              "type": "string",
+              "description": "Postal Code of the registered Merchant"
+            }
+          }
+        },
+        "responseAttrList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "searchOptions": {
+          "type": "object",
+          "properties": {
+            "wildCard": {
+              "type": "array",
+              "description": "* and ?/Wildcard Tag. Allows user to search on Merchant Name using wildcards",
+              "items": {
+                "type": "string"
+              }
+            },
+            "maxRecords": {
+              "type": "string",
+              "description": "Allows user to define maximum number of records to be sent in the response. If the User doesn’t set the maxRecords the value will be set by default to 25. Note: Response records will be unique and sent in order of highest to lowest Match Score"
+            },
+            "matchIndicators": {
+              "type": "boolean",
+              "description": "Allows user to define if they would like to see which request attributes found a matching record"
+            },
+            "matchScore": {
+              "type": "boolean",
+              "description": "Allows user to define if they would like to see the matchScore and receive the response in order of MatchScore"
+            },
+            "proximity": {
+              "type": "array",
+              "description": "Proximity tag. Allows user to do a proximity search on Merchant Name (upto 1 spaces). Note: Proximity Search cannot be combined with Wildcard. If wildcards are used proximity will be ignored.",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "header": {
+          "type": "object",
+          "properties": {
+            "requestMessageId": {
+              "type": "string",
+              "description": "max: 50 characters. A string which uniquely identifies the service request. Requesting application need to create this unique message Id"
+            },
+            "startIndex": {
+              "type": "string",
+              "description": "Optional. Integer Default='0'. Records displayed start at the defined number (Defaulted to 0 if not provided in request)"
+            },
+            "messageDateTime": {
+              "type": "string",
+              "description": "YYYY-MM-DDThh:mm:ss.sss, max: 23 characters. Date and time at which Request is sent (up to milliseconds in UTC). Ex: 2008-09-19T00:00:00.000"
+            }
+          }
+        }
+      }
+    },
+    "MerchantSearchAttrList": {
+      "type": "object",
+      "properties": {
+        "merchantName": {
+          "type": "string",
+          "description": "Name of the Merchant or Supplier. Note: Optional when any one of VisaMerchantId or VisaStoreId or BusinessRegistrationId or MerchantUrl or AcquirerCardAcceptorId is provided."
+        },
+        "visaMerchantId": {
+          "type": "string",
+          "description": "Double, max: 8 characters. Unique identifier for Merchant provided by VISA. Note: Optional when any one of MerchantName or VisaStoreId or BusinessRegistrationId or MerchantUrl or AcquirerCardAcceptorId is provided."
+        },
+        "visaStoreId": {
+          "type": "string",
+          "description": "Double, max: 9 characters. Unique identifier for a Branch/Outlet. Note: Optional when any one of MerchantName or VisaMerchantId or BusinessRegistrationId or MerchantUrl or AcquirerCardAcceptorId is provided."
+        },
+        "businessRegistrationId": {
+          "type": "string",
+          "description": "Merchants Business Registration ID/Tax ID.Note: Optional when any one of MerchantName or VisaMerchantId or VisaStoreId or MerchantUrl or AcquirerCardAcceptorId is provided."
+        },
+        "merchantStreetAddress": {
+          "type": "string",
+          "description": "Address of the registered Merchant"
+        },
+        "merchantCity": {
+          "type": "string",
+          "description": "City of the registered Merchant"
+        },
+        "merchantState": {
+          "type": "string",
+          "description": "Alpha, max: 2 characters. State of the registered Merchant. Ex: US"
+        },
+        "merchantPostalCode": {
+          "type": "string",
+          "description": "Postal Code of the registered Merchant"
+        }
+      }
+    },
+    "MerchantSearchOptions": {
+      "type": "object",
+      "properties": {
+        "wildCard": {
+          "type": "array",
+          "description": "* and ?/Wildcard Tag. Allows user to search on Merchant Name using wildcards",
+          "items": {
+            "type": "string"
+          }
+        },
+        "maxRecords": {
+          "type": "string",
+          "description": "Allows user to define maximum number of records to be sent in the response. If the User doesn’t set the maxRecords the value will be set by default to 25. Note: Response records will be unique and sent in order of highest to lowest Match Score"
+        },
+        "matchIndicators": {
+          "type": "boolean",
+          "description": "Allows user to define if they would like to see which request attributes found a matching record"
+        },
+        "matchScore": {
+          "type": "boolean",
+          "description": "Allows user to define if they would like to see the matchScore and receive the response in order of MatchScore"
+        },
+        "proximity": {
+          "type": "array",
+          "description": "Proximity tag. Allows user to do a proximity search on Merchant Name (upto 1 spaces). Note: Proximity Search cannot be combined with Wildcard. If wildcards are used proximity will be ignored.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "MerchantSearchHeader": {
+      "type": "object",
+      "properties": {
+        "requestMessageId": {
+          "type": "string",
+          "description": "max: 50 characters. A string which uniquely identifies the service request. Requesting application need to create this unique message Id"
+        },
+        "startIndex": {
+          "type": "string",
+          "description": "Optional. Integer Default='0'. Records displayed start at the defined number (Defaulted to 0 if not provided in request)"
+        },
+        "messageDateTime": {
+          "type": "string",
+          "description": "YYYY-MM-DDThh:mm:ss.sss, max: 23 characters. Date and time at which Request is sent (up to milliseconds in UTC). Ex: 2008-09-19T00:00:00.000"
+        }
+      }
+    },
+    "MerchantSearchResponse": {
+      "type": "object",
+      "properties": {
+        "merchantSearchServiceResponse": {
+          "type": "object",
+          "properties": {
+            "merchantSearchResponseHeader": {
+              "type": "object",
+              "properties": {
+                "requestMessageId": {
+                  "type": "string",
+                  "description": "A string uniquely identifies the service request. Response will contain same Message Id as received from requesting application"
+                },
+                "messageDateTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Date and time at which Response is sent (up to milliseconds in UTC). Ex: 2008-09-19T00:00:00.000"
+                },
+                "responseMessageId": {
+                  "type": "string",
+                  "description": "A combination of Service Id, Application Id, an Integer and current Timestamp that uniquely identifies the current request-response processing"
+                },
+                "startIndex": {
+                  "type": "string",
+                  "description": "Record Start Index"
+                },
+                "endIndex": {
+                  "type": "string",
+                  "description": "Record End Index"
+                },
+                "numRecordsMatched": {
+                  "type": "integer",
+                  "description": "Number of records matched"
+                },
+                "numRecordsReturned": {
+                  "type": "integer",
+                  "description": "Number of records returned. Note: Matched records may differ from returned records if Max Records is defined or system limit is exceeded"
+                }
+              }
+            },
+            "merchantSearchResponseStatus": {
+              "type": "object",
+              "properties": {
+                "statusCode": {
+                  "type": "string",
+                  "description": "List of attributes that found a match or did not find a match"
+                },
+                "statusDescription": {
+                  "type": "string",
+                  "description": "A description of the StatusCode. A brief description indicating the result of the Service Request"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "MerchantSearchServiceResponse": {
+      "type": "object",
+      "properties": {
+        "merchantSearchResponseHeader": {
+          "type": "object",
+          "properties": {
+            "requestMessageId": {
+              "type": "string",
+              "description": "A string uniquely identifies the service request. Response will contain same Message Id as received from requesting application"
+            },
+            "messageDateTime": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Date and time at which Response is sent (up to milliseconds in UTC). Ex: 2008-09-19T00:00:00.000"
+            },
+            "responseMessageId": {
+              "type": "string",
+              "description": "A combination of Service Id, Application Id, an Integer and current Timestamp that uniquely identifies the current request-response processing"
+            },
+            "startIndex": {
+              "type": "string",
+              "description": "Record Start Index"
+            },
+            "endIndex": {
+              "type": "string",
+              "description": "Record End Index"
+            },
+            "numRecordsMatched": {
+              "type": "integer",
+              "description": "Number of records matched"
+            },
+            "numRecordsReturned": {
+              "type": "integer",
+              "description": "Number of records returned. Note: Matched records may differ from returned records if Max Records is defined or system limit is exceeded"
+            }
+          }
+        },
+        "merchantSearchResponseStatus": {
+          "type": "object",
+          "properties": {
+            "statusCode": {
+              "type": "string",
+              "description": "List of attributes that found a match or did not find a match"
+            },
+            "statusDescription": {
+              "type": "string",
+              "description": "A description of the StatusCode. A brief description indicating the result of the Service Request"
+            }
+          }
+        }
+      }
+    },
+    "ResponseHeader": {
+      "type": "object",
+      "properties": {
+        "requestMessageId": {
+          "type": "string",
+          "description": "A string uniquely identifies the service request. Response will contain same Message Id as received from requesting application"
+        },
+        "messageDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date and time at which Response is sent (up to milliseconds in UTC). Ex: 2008-09-19T00:00:00.000"
+        },
+        "responseMessageId": {
+          "type": "string",
+          "description": "A combination of Service Id, Application Id, an Integer and current Timestamp that uniquely identifies the current request-response processing"
+        },
+        "startIndex": {
+          "type": "string",
+          "description": "Record Start Index"
+        },
+        "endIndex": {
+          "type": "string",
+          "description": "Record End Index"
+        },
+        "numRecordsMatched": {
+          "type": "integer",
+          "description": "Number of records matched"
+        },
+        "numRecordsReturned": {
+          "type": "integer",
+          "description": "Number of records returned. Note: Matched records may differ from returned records if Max Records is defined or system limit is exceeded"
+        }
+      }
+    },
+    "ResponseStatus": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string",
+          "description": "List of attributes that found a match or did not find a match"
+        },
+        "statusDescription": {
+          "type": "string",
+          "description": "A description of the StatusCode. A brief description indicating the result of the Service Request"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Visa APIs",
+    "url": "https://developer.visa.com/capabilities/merchant_search/reference"
+  }
+}
