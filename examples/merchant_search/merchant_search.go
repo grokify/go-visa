@@ -7,17 +7,18 @@ import (
 	"os"
 	"time"
 
-	"github.com/grokify/gotilla/fmt/fmtutil"
-	"github.com/grokify/gotilla/net/httputilmore"
-	"github.com/grokify/gotilla/time/timeutil"
+	"github.com/grokify/mogo/encoding/jsonutil"
+	"github.com/grokify/mogo/fmt/fmtutil"
+	"github.com/grokify/mogo/net/httputilmore"
+	"github.com/grokify/mogo/time/timeutil"
 	"github.com/joho/godotenv"
 
 	"github.com/grokify/go-visa"
-	visautil "github.com/grokify/oauth2more/visa"
+	visautil "github.com/grokify/goauth/visa"
 )
 
 func DemoMerchantSearchRequest(merchantName string) visa.MerchantSearchRequest {
-	t, err := time.Parse(timeutil.ISO8601NoTzMilli, "2017-11-04T17:40:50.903")
+	t, err := time.Parse(timeutil.ISO8601MilliNoTZ, "2017-11-04T17:40:50.903")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -60,7 +61,7 @@ func merchantSearchDirect(client *http.Client, merchantName string) (*visa.Merch
 
 	res := &visa.MerchantSearchResponse{}
 
-	err = httputilmore.UnmarshalResponseJSON(resp, res)
+	_, err = jsonutil.UnmarshalReader(resp.Body, res)
 	return res, err
 }
 

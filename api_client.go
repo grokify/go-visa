@@ -13,12 +13,13 @@ package visa
 import (
 	"bytes"
 	"fmt"
-	"gopkg.in/go-resty/resty.v1"
 	"io/ioutil"
 	"net/url"
 	"path/filepath"
 	"reflect"
 	"strings"
+
+	"gopkg.in/resty.v1"
 )
 
 type APIClient struct {

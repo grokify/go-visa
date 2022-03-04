@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/grokify/gotilla/net/httputilmore"
-	visautil "github.com/grokify/oauth2more/visa"
+	visautil "github.com/grokify/goauth/visa"
+	"github.com/grokify/mogo/net/httputilmore"
 	"github.com/joho/godotenv"
 )
 

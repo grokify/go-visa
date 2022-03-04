@@ -11,7 +11,7 @@
 package visa
 
 import (
-	"github.com/grokify/gotilla/time/timeutil"
+	"github.com/grokify/mogo/time/timeutil"
 )
 
 type MerchantSearchHeader struct {
