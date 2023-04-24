@@ -7,7 +7,7 @@ import (
 	"os"
 
 	visautil "github.com/grokify/goauth/visa"
-	"github.com/grokify/mogo/net/httputilmore"
+	"github.com/grokify/mogo/net/http/httputilmore"
 	"github.com/joho/godotenv"
 )
 
