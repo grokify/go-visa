@@ -6,7 +6,7 @@ toolchain go1.23.0
 
 require (
 	github.com/grokify/goauth v0.22.0
-	github.com/grokify/mogo v0.64.11
+	github.com/grokify/mogo v0.65.1
 	github.com/joho/godotenv v1.5.1
 	gopkg.in/resty.v1 v1.12.0
 )
@@ -17,8 +17,8 @@ require (
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/stretchr/testify v1.8.4 // indirect
-	golang.org/x/exp v0.0.0-20240909161429-701f63a606c0 // indirect
-	golang.org/x/net v0.29.0 // indirect
+	golang.org/x/exp v0.0.0-20241009180824-f66d83c29e7c // indirect
+	golang.org/x/net v0.30.0 // indirect
 	golang.org/x/oauth2 v0.23.0 // indirect
-	golang.org/x/text v0.18.0 // indirect
+	golang.org/x/text v0.19.0 // indirect
 )
