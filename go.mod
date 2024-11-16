@@ -1,11 +1,11 @@
 module github.com/grokify/go-visa
 
-go 1.22.6
+go 1.22.7
 
-toolchain go1.23.0
+toolchain go1.23.2
 
 require (
-	github.com/grokify/goauth v0.22.0
+	github.com/grokify/goauth v0.22.3
 	github.com/grokify/mogo v0.65.3
 	github.com/joho/godotenv v1.5.1
 	gopkg.in/resty.v1 v1.12.0
@@ -19,6 +19,6 @@ require (
 	github.com/stretchr/testify v1.8.4 // indirect
 	golang.org/x/exp v0.0.0-20241108190413-2d47ceb2692f // indirect
 	golang.org/x/net v0.31.0 // indirect
-	golang.org/x/oauth2 v0.23.0 // indirect
+	golang.org/x/oauth2 v0.24.0 // indirect
 	golang.org/x/text v0.20.0 // indirect
 )
