@@ -7,8 +7,8 @@
 
  [used-by-svg]: https://sourcegraph.com/github.com/grokify/go-visa/-/badge.svg
  [used-by-url]: https://sourcegraph.com/github.com/grokify/go-visa?badge
- [build-status-svg]: https://github.com/grokify/go-visa/workflows/test/badge.svg?branch=master
- [build-status-url]: https://github.com/grokify/go-visa/actions
+ [build-status-svg]: https://github.com/grokify/go-visa/workflows/test/badge.svg
+ [build-status-url]: https://github.com/grokify/go-visa/actions/workflows/test.yaml
  [goreport-svg]: https://goreportcard.com/badge/github.com/grokify/go-visa
  [goreport-url]: https://goreportcard.com/report/github.com/grokify/go-visa
  [codeclimate-status-svg]: https://codeclimate.com/github/grokify/go-visa/badges/gpa.svg
