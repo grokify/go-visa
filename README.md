@@ -1,24 +1,23 @@
 # Go API client for Visa
 
-[![Build Status][build-status-svg]][build-status-url]
+[![Go CI][go-ci-svg]][go-ci-url]
 [![Go Report Card][goreport-svg]][goreport-url]
 [![Docs][docs-godoc-svg]][docs-godoc-url]
+[![Visualization][viz-svg]][viz-url]
 [![License][license-svg]][license-url]
 
- [used-by-svg]: https://sourcegraph.com/github.com/grokify/go-visa/-/badge.svg
- [used-by-url]: https://sourcegraph.com/github.com/grokify/go-visa?badge
- [build-status-svg]: https://github.com/grokify/go-visa/workflows/test/badge.svg
- [build-status-url]: https://github.com/grokify/go-visa/actions/workflows/test.yaml
+ [go-ci-svg]: https://github.com/grokify/go-visa/actions/workflows/go-ci.yaml/badge.svg?branch=main
+ [go-ci-url]: https://github.com/grokify/go-visa/actions/workflows/go-ci.yaml
  [goreport-svg]: https://goreportcard.com/badge/github.com/grokify/go-visa
  [goreport-url]: https://goreportcard.com/report/github.com/grokify/go-visa
- [codeclimate-status-svg]: https://codeclimate.com/github/grokify/go-visa/badges/gpa.svg
- [codeclimate-status-url]: https://codeclimate.com/github/grokify/go-visa
  [docs-godoc-svg]: https://pkg.go.dev/badge/github.com/grokify/go-visa
  [docs-godoc-url]: https://pkg.go.dev/github.com/grokify/go-visa
- [license-svg]: https://img.shields.io/badge/license-MIT-govisa.svg
- [license-url]: https://github.com/grokify/go-visa/blob/master/LICENSE
+ [viz-svg]: https://img.shields.io/badge/visualizaton-Go-blue.svg
+ [viz-url]: https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=grokify%2Fgo-visa
  [loc-svg]: https://tokei.rs/b1/github/grokify/go-visa
  [repo-url]: https://github.com/grokify/go-visa
+ [license-svg]: https://img.shields.io/badge/license-MIT-blue.svg
+ [license-url]: https://github.com/grokify/go-visa/blob/master/LICENSE
 
 This is a quick Swagger Spec for the Visa API
 
