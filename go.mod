@@ -4,7 +4,7 @@ go 1.26.0
 
 require (
 	github.com/grokify/goauth v0.23.30
-	github.com/grokify/mogo v0.74.4
+	github.com/grokify/mogo v0.74.5
 	github.com/joho/godotenv v1.5.1
 	gopkg.in/resty.v1 v1.12.0
 )
